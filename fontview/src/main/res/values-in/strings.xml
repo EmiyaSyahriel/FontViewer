@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Penampil Font</string>
+    <string name="err_input_stream_invalid">Galat : Gagal membuka input stream dari apl penyedia berkas</string>
+    <string name="font_style_regular">Biasa</string>
+    <string name="font_style_bold">Tebal</string>
+    <string name="font_style_italic">Miring</string>
+    <string name="font_style_italic_bold">Miring Tebal</string>
+    <string name="err_font_failed_to_load">Gagal memuat font : %1$s</string>
+    <string name="font_test_text">Tokoh qari bonceng juru xilofon di vespanya muzawir</string>
+    <string name="testopt_style">Gaya</string>
+    <string name="testopt_size">Ukuran</string>
+    <string name="tab_detail">Rincian</string>
+    <string name="tab_test_view">Parameter Pratampil</string>
+    <string name="detailkvp_copyright_notice">Hak Cipta</string>
+    <string name="detailskvp_full_font_name">Nama Lengkap Font</string>
+    <string name="detailskvp_font_subfamily_name">Sub-keluarga Font</string>
+    <string name="detailskvp_font_family_name">Keluarga Font</string>
+    <string name="detailskvp_uuid">Tanda Pengenal Unik</string>
+    <string name="detailskvp_version">Versi</string>
+    <string name="detailskvp_post_script_name">Nama PostScript</string>
+    <string name="detailskvp_trademark">Hak Dagang</string>
+    <string name="detailskvp_manufacturer_name">Nama Pabrik</string>
+    <string name="detailskvp_designer_name">Desainer</string>
+    <string name="detailskvp_description">Deskripsi</string>
+    <string name="detailskvp_url_vendor">URL Penjual</string>
+    <string name="detailskvp_url_designer">URL Pendesain</string>
+    <string name="detailskvp_license_description">Deskripsi Lisensi</string>
+    <string name="detailskvp_url_license_info">URL Info Lisensi</string>
+    <string name="detailskvp_typo_family_name">Nama Keluarga Tipografis</string>
+    <string name="detailskvp_typo_subfamily_name">Nama Sub-keluarga Tipografis</string>
+    <string name="detailskvp_mac_compat">Nama Penuh (Cocok dengan Macintosh)</string>
+    <string name="detailskvp_sample_text">Teks Sampel</string>
+    <string name="detailskvp_postscript_cid_name">Nama untuk PostScript CID findfont</string>
+    <string name="detailskvp_wws_family_name">Nama Keluarga WWS</string>
+    <string name="detailskvp_wws_subfamily_name">Nama Sub-keluarga WWS</string>
+    <string name="detailskvp_light_palette">Palet Latar Belakang Terang</string>
+    <string name="detailskvp_dark_palette">Palet Latar Belakang Gelap</string>
+    <string name="detailskvp_variation_postscript_name">Prefiks Nama PostScript Variation</string>
+    <string name="dlg_open_link">Buka Link</string>
+    <string name="progress_get_name_info">Mengambil info  …</string>
+    <string name="menu_open">Buka</string>
+    <string name="menu_about">Tentang</string>
+</resources>

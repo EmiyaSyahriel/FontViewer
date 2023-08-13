@@ -8,8 +8,9 @@
     <string name="err_font_failed_to_load">Failed to load font : %1$s</string>
     <string name="font_test_text">The quick brown fox jumps over the lazy dog</string>
     <string name="testopt_style">Style</string>
+    <string name="testopt_size">Size</string>
     <string name="tab_detail">Details</string>
-    <string name="tab_test_view">View Parameter</string>
+    <string name="tab_test_view">Preview Parameters</string>
     <string name="detailkvp_copyright_notice">Copyright</string>
     <string name="detailskvp_full_font_name">Font Full Name</string>
     <string name="detailskvp_font_subfamily_name">Font Subfamily</string>
@@ -34,8 +35,10 @@
     <string name="detailskvp_wws_subfamily_name">WWS Subfamily Name</string>
     <string name="detailskvp_light_palette">Light Background Palette</string>
     <string name="detailskvp_dark_palette">Dark Background Palette</string>
-    <string name="detailskvp_variation_postscript_name">Vairation PostScript Name Prefix</string>
+    <string name="detailskvp_variation_postscript_name">Variation PostScript Name Prefix</string>
     <string name="dlg_open_link">Open Link</string>
-    <string name="progress_get_name_info">Getting string info ...</string>
-    <string name="fmt_pt">%1$spt</string>
+    <string name="progress_get_name_info">Getting string info …</string>
+    <string name="fmt_pt" translatable="false">%1$spt</string>
+    <string name="menu_open">Open</string>
+    <string name="menu_about">About</string>
 </resources>

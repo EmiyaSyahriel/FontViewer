@@ -11,6 +11,8 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.TypedValue
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
@@ -107,6 +109,24 @@ class MainActivity : Activity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val m = menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onMenuItemSelected(featureId: Int, item: MenuItem): Boolean {
+        return when(featureId){
+            R.id.menu_about -> {
+                true
+            }
+            R.id.menu_open -> {
+                openFilePicker()
+                true
+            }
+            else -> super.onMenuItemSelected(featureId, item)
+        }
+    }
+
     private fun bindViewCallbacks() {
         testText = findViewById(R.id.test_text)
         findViewById<Spinner>(R.id.item_style_selector).onItemSelectedListener = _selector
@@ -189,53 +209,62 @@ class MainActivity : Activity() {
         }
     }
 
-    private fun onLoadFinished(){
+    private fun onLoadFinished() {
         val l = tab_details.findViewById<LinearLayout>(R.id.details_root)
         l.removeAllViews()
 
         val keys = mapOf(
-            TTFInfo.NK_FONT_FAMILY_NAME          to R.string.detailskvp_font_family_name,
-            TTFInfo.NK_FONT_SUBFAMILY_NAME       to R.string.detailskvp_font_subfamily_name,
-            TTFInfo.NK_UUID                      to R.string.detailskvp_uuid,
-            TTFInfo.NK_FULL_FONT_NAME            to R.string.detailskvp_full_font_name,
-            TTFInfo.NK_VERSION                   to R.string.detailskvp_version,
-            TTFInfo.NK_POST_SCRIPT_NAME          to R.string.detailskvp_post_script_name,
-            TTFInfo.NK_TRADEMARK                 to R.string.detailskvp_trademark,
-            TTFInfo.NK_MANUFACTURER_NAME         to R.string.detailskvp_manufacturer_name,
-            TTFInfo.NK_DESIGNER_NAME             to R.string.detailskvp_designer_name,
-            TTFInfo.NK_URL_VENDOR                to R.string.detailskvp_url_vendor,
-            TTFInfo.NK_URL_DESIGNER              to R.string.detailskvp_url_designer,
-            TTFInfo.NK_TYPO_FAMILY_NAME          to R.string.detailskvp_typo_family_name,
-            TTFInfo.NK_TYPO_SUBFAMILY_NAME       to R.string.detailskvp_typo_subfamily_name,
-            TTFInfo.NK_MAC_COMPAT                to R.string.detailskvp_mac_compat,
-            TTFInfo.NK_SAMPLE_TEXT               to R.string.detailskvp_sample_text,
-            TTFInfo.NK_POSTSCRIPT_CID_NAME       to R.string.detailskvp_postscript_cid_name,
-            TTFInfo.NK_WWS_FAMILY_NAME           to R.string.detailskvp_wws_family_name,
-            TTFInfo.NK_WWS_SUBFAMILY_NAME        to R.string.detailskvp_wws_subfamily_name,
-            TTFInfo.NK_LIGHT_PALETTE             to R.string.detailskvp_light_palette,
-            TTFInfo.NK_DARK_PALETTE              to R.string.detailskvp_dark_palette,
+            TTFInfo.NK_FONT_FAMILY_NAME to R.string.detailskvp_font_family_name,
+            TTFInfo.NK_FONT_SUBFAMILY_NAME to R.string.detailskvp_font_subfamily_name,
+            TTFInfo.NK_UUID to R.string.detailskvp_uuid,
+            TTFInfo.NK_FULL_FONT_NAME to R.string.detailskvp_full_font_name,
+            TTFInfo.NK_VERSION to R.string.detailskvp_version,
+            TTFInfo.NK_POST_SCRIPT_NAME to R.string.detailskvp_post_script_name,
+            TTFInfo.NK_TRADEMARK to R.string.detailskvp_trademark,
+            TTFInfo.NK_MANUFACTURER_NAME to R.string.detailskvp_manufacturer_name,
+            TTFInfo.NK_DESIGNER_NAME to R.string.detailskvp_designer_name,
+            TTFInfo.NK_URL_VENDOR to R.string.detailskvp_url_vendor,
+            TTFInfo.NK_URL_DESIGNER to R.string.detailskvp_url_designer,
+            TTFInfo.NK_TYPO_FAMILY_NAME to R.string.detailskvp_typo_family_name,
+            TTFInfo.NK_TYPO_SUBFAMILY_NAME to R.string.detailskvp_typo_subfamily_name,
+            TTFInfo.NK_MAC_COMPAT to R.string.detailskvp_mac_compat,
+            TTFInfo.NK_SAMPLE_TEXT to R.string.detailskvp_sample_text,
+            TTFInfo.NK_POSTSCRIPT_CID_NAME to R.string.detailskvp_postscript_cid_name,
+            TTFInfo.NK_WWS_FAMILY_NAME to R.string.detailskvp_wws_family_name,
+            TTFInfo.NK_WWS_SUBFAMILY_NAME to R.string.detailskvp_wws_subfamily_name,
+            TTFInfo.NK_LIGHT_PALETTE to R.string.detailskvp_light_palette,
+            TTFInfo.NK_DARK_PALETTE to R.string.detailskvp_dark_palette,
             TTFInfo.NK_VARIATION_POSTSCRIPT_NAME to R.string.detailskvp_variation_postscript_name,
-            TTFInfo.NK_COPYRIGHT_NOTICE          to R.string.detailkvp_copyright_notice,
-            TTFInfo.NK_DESCRIPTION               to R.string.detailskvp_description,
-            TTFInfo.NK_LICENSE_DESCRIPTION       to R.string.detailskvp_license_description,
-            TTFInfo.NK_URL_LICENSE_INFO          to R.string.detailskvp_url_license_info,
+            TTFInfo.NK_COPYRIGHT_NOTICE to R.string.detailkvp_copyright_notice,
+            TTFInfo.NK_DESCRIPTION to R.string.detailskvp_description,
+            TTFInfo.NK_LICENSE_DESCRIPTION to R.string.detailskvp_license_description,
+            TTFInfo.NK_URL_LICENSE_INFO to R.string.detailskvp_url_license_info,
         )
 
-        for(key in keys){
+        for (key in keys) {
             val kvv = KeyValueView(this)
             val info = ttfInfo[key.key]
-            if(info.isNullOrEmpty()) continue
+            if (info.isNullOrEmpty()) continue
             kvv.set(key.value, info)
             l.addView(kvv)
         }
         l.requestLayout()
 
-        val k = ttfInfo[TTFInfo.NK_SAMPLE_TEXT]
         testText.paint.typeface = font
-        if(k == null){
-            findViewById<EditText>(R.id.test_text_item).text = k
+
+        val k = ttfInfo[TTFInfo.NK_SAMPLE_TEXT]
+        if (!k.isNullOrEmpty()) {
+            findViewById<EditText>(R.id.test_text_item).setText(k)
+            testText.text = k
+            val num = testText.textSize
+            testText.textSize = num + 1
+            testText.text = k
+            testText.textSize = num
+            testText.text = k
         }
         testText.invalidate()
+
+        title = ttfInfo[TTFInfo.NK_FONT_FAMILY_NAME] ?: getString(R.string.app_name)
     }
 
     @Deprecated("Deprecated in Java")

@@ -1,2 +1,2 @@
-include(":app")
+include(":fontview")
 rootProject.name = "Font Viewer"
