@@ -14,6 +14,7 @@ Any font is supported by Android Typeface class and Typecast library
 
 ## Dependencies
 - [Typecast](https://github.com/dcsch/typecast) - for Font Info reading
+- Standard Android API, including deprecated APIs like TabHost (will change in-case they fully removed it from new Android version)
 
 ## System Requirements
 - Android 4.4 Kitkat

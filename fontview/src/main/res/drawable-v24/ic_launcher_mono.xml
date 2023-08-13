@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group android:scaleY="4" android:scaleX="4" android:pivotY="12" android:pivotX="12" android:translateY="40" android:translateX="40">
+        <group>
+            <clip-path
+                android:pathData="M 0 0 v 30 h 30 v -30 h -30
+                    m 13 10.5
+                    a 3.5 3.5 1 0 1 0 7 a 3.5 3.5 1 0 1 0 -7
+                    v 2
+                    a 1.5 1.5 1 1 0 0 3 a 1.5 1.5 1 1 0 0 -3 z "/>
+            <group>
+                <clip-path android:pathData="M 0 0 h 108 v 108 h -108 v -108 m 9.5 9.5 v 3 h 1 q 0 -2 3 -1 v -2"/>
+                <path android:fillColor="#FFF"
+                    android:pathData="M 6 7 h 8 v 2 q 0 -1 -1 -1 h -2 v 6 q 0 1 1 1 h -4 q 1 0 1 -1 v -6 h -2 q -1 0 -1 1  z"
+                    />
+            </group>
+            <path android:fillColor="#FFF"
+                android:pathData="M 10 10 h 8 v 2 q 0 -1 -1 -1 h -2 v 6 q 0 1 1 1 h -4 q 1 0 1 -1 v -6 h -2 q -1 0 -1 1  z"
+                />
+        </group>
+        <group android:rotation="45" android:translateY="12" android:translateX="15">
+        <path android:fillColor="#FFF"
+            android:pathData="M 0 0 a 3 3 1 0 1 0 6 a 3 3 1 0 1 0 -6 v 0.5 a 2 2 1 1 0 0 5 a 2 2 1 1 0 0 -5
+                m 0.5 5 v 5 h -1 v -5z "/>
+        </group>
+    </group>
+</vector>
