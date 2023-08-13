@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="font_styles">
+        <item>@string/font_style_regular</item>
+        <item>@string/font_style_bold</item>
+        <item>@string/font_style_italic</item>
+        <item>@string/font_style_italic_bold</item>
+    </string-array>
+</resources>
