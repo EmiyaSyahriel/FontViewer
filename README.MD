@@ -1,4 +1,4 @@
-# Font Viewer
+# <img src="readme/icon.png" alt="Icon" style="height: 1em"> Font Viewer
 Quick, simple, small, less-featured font viewer for Android. 
 Aiming to be Android version of Windows Font Preview, except that this app cannot install font to system, that is other app's responsibility.
 
@@ -14,8 +14,15 @@ Aiming to be Android version of Windows Font Preview, except that this app canno
    - We uses small amount of dependency and APIs that already available in Android itself, not even AndroidX and Jetpack were much used.
 - Supports from Android 4.4 up to Android 13
 
+## Screenshots
+<img src="readme/icon_support.png" alt="Support for Icon" height="400">
+<img src="readme/port_1.png" alt="Portrait 1" height="400">
+<img src="readme/port_2.png" alt="Portrait 2" height="400">
+<img src="readme/land_1.png" alt="Landscape" width="400">
+<img src="readme/tablet_land.png" alt="Tablet Landscape" width="400">
+
 ## Known Issues
-- Some fonts like `Fira Code` seems to not being supported by Typecast due to having incompliant glyf table
+- Some fonts like `Fira Code` seems to not being supported by Typecast due to having non-compliant `glyf` table
 
 ## Supported type
 Any font is supported by Android Typeface class and Typecast library
