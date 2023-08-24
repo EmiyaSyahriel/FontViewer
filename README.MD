@@ -15,11 +15,17 @@ Aiming to be Android version of Windows Font Preview, except that this app canno
 - Supports from Android 4.4 up to Android 13
 
 ## Screenshots
+<img src="readme/port_1.png" alt="Portrait 1" height="400"><img src="readme/port_2.png" alt="Portrait 2" height="400">
+
+<sub>Portrait Screenshots</sub>
+
 <img src="readme/icon_support.png" alt="Support for Icon" height="400">
-<img src="readme/port_1.png" alt="Portrait 1" height="400">
-<img src="readme/port_2.png" alt="Portrait 2" height="400">
-<img src="readme/land_1.png" alt="Landscape" width="400">
-<img src="readme/tablet_land.png" alt="Tablet Landscape" width="400">
+
+<sub>X-plore, Showing TTF file icon associated with this app</sub>
+
+<img src="readme/land_1.png" alt="Landscape" width="400"><img src="readme/tablet_land.png" alt="Tablet Landscape" width="400">
+
+<sub>Landscape, left is phone, right is tablet</sub>
 
 ## Known Issues
 - Some fonts like `Fira Code` seems to not being supported by Typecast due to having non-compliant `glyf` table
