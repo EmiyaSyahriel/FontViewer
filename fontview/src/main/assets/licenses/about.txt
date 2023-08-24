@@ -1,0 +1,22 @@
+(c) 2023 Syahriel Ibnu "EmiyaSyahriel" Irfansyah
+
+Quick, simple, small, less-featured font viewer for Android.
+Aiming to be Android version of Windows Font Preview, except that this app cannot install font to system, that is other app's responsibility.
+
+The reason I made this app is that there is no fully "free" font viewer in Play Store that is still usable in my devices. Some of them were
+unnecessarily big, some with ads, some uses WebView, some were old and incompatible with my devices, some gives too much feature that I might not need.
+
+Features :
+- Can be set as default "Open with" app
+    - Also include unique file icon for file managers that supports it
+- Uses Android File Chooser, No standalone file selector that requires entire filesystem permission
+- Native Android UI, Looks like an app that belongs to your phone instead of those over-beautified alien UI
+- No internet necessary and no user data is collected by the app itself
+    - Links clicked in this apps will be opened in browser, which needs internet and those links might requires some of your data.
+- Small, release version is less than megabytes of storage
+    - We uses small amount of dependency, not even AndroidX and Jetpack were used.
+- Supports from Android 4.4 up to Android 13
+
+The app is licensed under MIT License
+
+This app, by itself, and uses software components that is open source with licenses as follow :

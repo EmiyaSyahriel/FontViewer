@@ -41,4 +41,8 @@
     <string name="fmt_pt" translatable="false">%1$spt</string>
     <string name="menu_open">Open</string>
     <string name="menu_about">About</string>
+    <string name="about_main">About</string>
+    <string name="about_license_self">Font Viewer (MIT)</string>
+    <string name="about_license_typecast">TypeCast (Apache 2.0)</string>
+    <string name="about_dlg_title">About</string>
 </resources>

@@ -41,4 +41,8 @@
     <string name="progress_get_name_info">Mengambil info  …</string>
     <string name="menu_open">Buka</string>
     <string name="menu_about">Tentang</string>
+    <string name="about_main">Tentang</string>
+    <string name="about_license_self">Penampil Font (MIT)</string>
+    <string name="about_license_typecast">TypeCast (Apache 2.0)</string>
+    <string name="about_dlg_title">Tentang</string>
 </resources>

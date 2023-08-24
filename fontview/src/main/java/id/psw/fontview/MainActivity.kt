@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -26,6 +27,7 @@ import android.widget.TextView
 import android.widget.Toast
 import android.window.OnBackInvokedCallback
 import android.window.OnBackInvokedDispatcher
+import id.psw.fontview.MainActivity.Companion.RQ_REQUEST_OPEN
 import net.java.dev.typecast.ot.TTFont
 import java.io.File
 import kotlin.concurrent.thread
@@ -115,8 +117,9 @@ class MainActivity : Activity() {
     }
 
     override fun onMenuItemSelected(featureId: Int, item: MenuItem): Boolean {
-        return when(featureId){
+        return when(item.itemId){
             R.id.menu_about -> {
+                showAboutAlertDialog()
                 true
             }
             R.id.menu_open -> {
@@ -125,6 +128,39 @@ class MainActivity : Activity() {
             }
             else -> super.onMenuItemSelected(featureId, item)
         }
+    }
+
+    @SuppressLint("InflateParams") // It's fine
+    private fun showAboutAlertDialog() {
+        val vw = layoutInflater.inflate(R.layout.about_page, null)
+        val rt = vw.findViewById<LinearLayout>(R.id.about_list)
+        val entries = mapOf(
+            R.string.about_main to "licenses/about.txt",
+            R.string.about_license_self to "licenses/fontviewer.mit",
+            R.string.about_license_typecast to "licenses/typecast.apache2"
+        )
+
+        for(entry in entries){
+            val o = assets.open(entry.value)
+            val txt = o.bufferedReader().readText()
+            o.close()
+            rt.addView(TextView(this).apply {
+                setText(entry.key)
+                setTextSize(TypedValue.COMPLEX_UNIT_DIP, 24.0f)
+                setPadding(20, 20, 20, 20)
+                gravity = Gravity.END or Gravity.CENTER_VERTICAL
+            })
+            rt.addView(TextView(this).apply {
+                text = txt
+                setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14.0f)
+            })
+        }
+
+        AlertDialog.Builder(this)
+            .setTitle(R.string.about_dlg_title)
+            .setView(vw)
+            .setNegativeButton(android.R.string.ok) { a, _ -> a.dismiss() }
+            .show()
     }
 
     private fun bindViewCallbacks() {
@@ -213,6 +249,7 @@ class MainActivity : Activity() {
         val l = tab_details.findViewById<LinearLayout>(R.id.details_root)
         l.removeAllViews()
 
+
         val keys = mapOf(
             TTFInfo.NK_FONT_FAMILY_NAME to R.string.detailskvp_font_family_name,
             TTFInfo.NK_FONT_SUBFAMILY_NAME to R.string.detailskvp_font_subfamily_name,
@@ -261,6 +298,9 @@ class MainActivity : Activity() {
             testText.text = k
             testText.textSize = num
             testText.text = k
+        }else{
+            val t = findViewById<EditText>(R.id.test_text_item).text
+            testText.text = t
         }
         testText.invalidate()
 
@@ -273,7 +313,7 @@ class MainActivity : Activity() {
     }
 
     private fun loadFontImpl(data: Uri){
-        var prog : ProgressWindow? = null
+        var prog : MainActivity.ProgressWindow? = null
 
         runOnUiThread {
             prog = ProgressWindow(this)
